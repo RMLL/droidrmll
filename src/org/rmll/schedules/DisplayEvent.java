@@ -20,7 +20,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -144,6 +143,7 @@ public class DisplayEvent extends Activity {
 
 	}
 
+	@SuppressWarnings("unused")
 	private void setImageViewImage(int id, String filename) {
 		if (filename == null) {
 			throw new IllegalArgumentException();

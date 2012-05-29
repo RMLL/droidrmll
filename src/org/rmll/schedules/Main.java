@@ -59,6 +59,7 @@ public class Main extends Activity implements ParserEventListener,
 	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6;
 	protected Button btnSearch, btnFavorites;
 
+	@SuppressWarnings("unused")
 	private BroadcastReceiver favoritesChangedReceiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {

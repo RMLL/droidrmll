@@ -2,7 +2,6 @@ package org.rmll.broadcast;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.rmll.R;
 import org.rmll.db.DBAdapter;
