@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	  package="org.fosdem"
 	  android:versionCode="4"
-	  android:versionName="1.0.2">
+	  android:versionName="1.0.2" package="org.rmll">
 	  <uses-permission android:name="android.permission.INTERNET" />
 	  <uses-permission android:name="android.permission.VIBRATE" />
 	  <supports-screens android:smallScreens="true" 
@@ -15,9 +14,9 @@
 		android:label="@string/app_name" 
 	>
 		<meta-data android:name="android.app.default_searchable"
-			   android:value="org.fosdem.schedules.Main" />
+			   android:value="org.rmll.schedules.Main" />
 		<uses-library android:name="android.test.runner"/>
-		<activity android:name="org.fosdem.schedules.Main"
+		<activity android:name="org.rmll.schedules.Main"
 				  android:label="@string/app_name"
 				  android:theme="@android:style/Theme.NoTitleBar">
 			<intent-filter>
@@ -33,39 +32,39 @@
 			<meta-data android:name="android.app.searchable"
 					android:resource="@xml/searchable"/>
 		</activity>
-		<activity android:name="org.fosdem.schedules.DisplayEvent"
+		<activity android:name="org.rmll.schedules.DisplayEvent"
 						  android:theme="@android:style/Theme.NoTitleBar">
 			<intent-filter>
-				<action android:name="org.fosdem.schedules.DISPLAY_EVENT" />
+				<action android:name="org.rmll.schedules.DISPLAY_EVENT" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
-		<activity android:name="org.fosdem.schedules.TrackListActivity"/>
-		<activity android:name="org.fosdem.schedules.EventListActivity"/>
-		<activity android:name="org.fosdem.schedules.Preferences"/>
+		<activity android:name="org.rmll.schedules.TrackListActivity"/>
+		<activity android:name="org.rmll.schedules.EventListActivity"/>
+		<activity android:name="org.rmll.schedules.Preferences"/>
 
  		<receiver android:name=".broadcast.NotificationReceiver" android:exported="false">
 			<intent-filter>
-				<action android:name="org.fosdem.action.favorites_update" />
+				<action android:name="org.rmll.action.favorites_update" />
 			</intent-filter>
 			<intent-filter>
-				<action android:name="org.fosdem.action.favorites_initial_load"/>
+				<action android:name="org.rmll.action.favorites_initial_load"/>
 			</intent-filter>
 			<intent-filter>
-				<action android:name="org.fosdem.action.favorites_alarm" />
+				<action android:name="org.rmll.action.favorites_alarm" />
 				<data android:scheme="event" />
 			</intent-filter>
 		</receiver>
 
-		<provider android:name="org.fosdem.db.DBAdapter" android:authorities="org.fosdem.pojo.Event"/>
+		<provider android:name="org.rmll.db.DBAdapter" android:authorities="org.rmll.pojo.Event"/>
 		<!-- Provides search suggestions for words and their definitions. -->
-		<provider android:name="org.fosdem.providers.SearchProvider"
-			android:authorities="fosdemsearch"
+		<provider android:name="org.rmll.providers.SearchProvider"
+			android:authorities="rmllsearch"
 			android:syncable="false" />
 	</application>
 	<uses-sdk  android:targetSdkVersion="4" android:minSdkVersion="3"/>
 	<instrumentation 
 		android:name="android.test.InstrumentationTestRunner"
-		android:targetPackage="org.fosdem"
-		android:label="FOSDEM JUnit" />
+		android:targetPackage="org.rmll"
+		android:label="RMLL JUnit" />
 </manifest> 
