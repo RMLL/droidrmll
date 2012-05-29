@@ -3,6 +3,7 @@ package org.rmll.schedules;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Enumeration;
+import java.util.Locale;
 
 import org.rmll.db.DBAdapter;
 import org.rmll.exceptions.ParserException;
@@ -47,7 +48,9 @@ public class BackgroundUpdater implements Runnable {
 		this.handler = handler;
 		this.parseEventListener = parseEventListener;
 		this.context = context;
-		this.doUpdateRooms = updateRooms;
+		//this.doUpdateRooms = updateRooms;
+		// no rooms yet
+		this.doUpdateRooms = false;
 		this.doUpdateXml = updateXml;
 	}
 
@@ -72,9 +75,9 @@ public class BackgroundUpdater implements Runnable {
 	private void updateXml() throws ParserException, IOException {
 		
 		sendMessage(Main.STARTFETCHING);
-
+		
 		// Parse
-		final ScheduleParser parser = new ScheduleParser(Main.XML_URL);
+		final ScheduleParser parser = new ScheduleParser(Main.XML_URL+'/'+Locale.getDefault().getLanguage());
 		parser.addTagEventListener(parseEventListener);
 		final Schedule s = parser.parse();
 
@@ -113,6 +116,7 @@ public class BackgroundUpdater implements Runnable {
 		for (final String room : rooms) {
 			// Log.d(LOG_TAG, "Downloading room image:" + room);
 			try {
+				System.out.println("dbg: "+StringUtil.roomNameToURL(room));
 				FileUtil.fetchCached(StringUtil.roomNameToURL(room));
 			} catch (MalformedURLException e) {
 			} catch (IOException e) {

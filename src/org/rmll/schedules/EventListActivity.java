@@ -8,6 +8,7 @@ import org.rmll.broadcast.FavoritesBroadcast;
 import org.rmll.db.DBAdapter;
 import org.rmll.pojo.Event;
 import org.rmll.util.EventAdapter;
+import org.rmll.util.StringUtil;
 
 import android.app.ListActivity;
 import android.app.SearchManager;
@@ -57,7 +58,7 @@ public class EventListActivity extends ListActivity {
 			query = extras.getString(QUERY);
 		}
 		if (trackName != null && dayIndex != 0)
-			setTitle("Day " + dayIndex + " - " + trackName);
+			setTitle(getString(R.string.eventslist_title, StringUtil.dayIndexToDate(dayIndex), trackName));
 		if (query != null)
 			setTitle("Search for: " + query);
 		if (favorites != null && favorites) {

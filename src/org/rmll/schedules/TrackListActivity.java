@@ -9,6 +9,7 @@ import org.rmll.R;
 import org.rmll.db.DBAdapter;
 import org.rmll.pojo.Track;
 import org.rmll.util.TrackAdapter;
+import org.rmll.util.StringUtil;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -38,7 +39,7 @@ public class TrackListActivity extends ListActivity  {
 		dayIndex = savedInstanceState != null ? savedInstanceState.getInt(DAY_INDEX) : 0;
 		
 		tracks = getTracks();
-		setTitle("Tracks for Day " + dayIndex);
+		setTitle(getString(R.string.trackslist_title, StringUtil.dayIndexToDate(dayIndex)));
         setListAdapter(new TrackAdapter(this, R.layout.track_list, tracks));
        
 	}

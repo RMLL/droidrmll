@@ -2,6 +2,7 @@ package org.rmll.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -100,7 +101,7 @@ public class StringUtil {
 	
 	
 	public static String datesToString(final Date start, final int duration) {
-		return new SimpleDateFormat("EEE @HH:mm").format(start)
+		return new SimpleDateFormat("EEEEEEEE dd @HH:mm").format(start)
 			+ " - " + duration + " min";
 		
 	}
@@ -120,4 +121,15 @@ public class StringUtil {
 		return Main.ROOM_IMG_URL_BASE+name.replace(".", "").toLowerCase();
 	}
 
+	public static String dayIndexToDate(int dayindex) {
+		// hardcoded date for now
+		int year = 2011;
+		int month = 7;
+		int day = 9;
+	
+		Calendar cal = Calendar.getInstance();
+		cal.set(year, month-1, day);
+		cal.add(Calendar.DAY_OF_MONTH, dayindex-1);
+		return new SimpleDateFormat("EEEEEEEE dd").format(cal.getTime());
+	}
 }

@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-<PreferenceCategory android:title="Notifications">
-<CheckBoxPreference
-android:title="Enable notifications"
-android:defaultValue="true"
-android:summary="If checked, this will notify you of upcoming events you favorited"
-android:key="notifyPref" />
-<CheckBoxPreference
-android:title="Vibrate"
-android:defaultValue="true"
-android:summary="Vibrate on notifications"
-android:key="vibratePref" />
-<CheckBoxPreference
-android:title="Flash led"
-android:defaultValue="true"
-android:summary="Blink led on notification"
-android:key="ledPref" />
-<EditTextPreference
-android:title="Notification time"
-android:defaultValue="10"
-android:summary="Delay before getting notified of an upcoming favorite event"
-android:key="delayPref"
-android:inputType="number"
-android:digits="0123456789"
-android:maxLength="3"
-/>
-</PreferenceCategory>
-<PreferenceCategory android:title="Favorites">
-<CheckBoxPreference
-android:title="Only show upcoming"
-android:defaultValue="false"
-android:summary="If checked, this will ony show the upcoming favorites in the list"
-android:key="upcomingPref" />
-</PreferenceCategory>
+	<PreferenceCategory android:title="@string/notifications">
+		<CheckBoxPreference
+			android:title="@string/enable_notifications"
+			android:defaultValue="true"
+			android:summary="@string/enable_notifications_help"
+			android:key="notifyPref"
+		/>
+		<CheckBoxPreference
+			android:title="@string/vibrate"
+			android:defaultValue="true"
+			android:summary="@string/vibrate_help"
+			android:key="vibratePref"
+		/>
+		<CheckBoxPreference
+			android:title="@string/flash_led"
+			android:defaultValue="true"
+			android:summary="@string/flash_led_help"
+			android:key="ledPref"
+		/>
+		<EditTextPreference
+			android:title="@string/notification_time"
+			android:defaultValue="10"
+			android:summary="@string/notification_time_help"
+			android:key="delayPref"
+			android:inputType="number"
+			android:digits="0123456789"
+			android:maxLength="3"
+		/>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/favorites">
+		<CheckBoxPreference
+			android:title="@string/favorites_upcoming"
+			android:defaultValue="false"
+			android:summary="@string/favorites_upcoming_help"
+			android:key="upcomingPref"
+		/>
+	</PreferenceCategory>
 </PreferenceScreen>

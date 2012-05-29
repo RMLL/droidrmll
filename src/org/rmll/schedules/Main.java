@@ -56,8 +56,8 @@ public class Main extends Activity implements ParserEventListener,
 
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;
-	protected Button btnDay1, btnDay2, btnSearch, btnFavorites;
-	protected Intent service;
+	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6;
+	protected Button btnSearch, btnFavorites;
 
 	private BroadcastReceiver favoritesChangedReceiver = new BroadcastReceiver() {
 		@Override
@@ -107,6 +107,14 @@ public class Main extends Activity implements ParserEventListener,
 		btnDay1.setOnClickListener(this);
 		btnDay2 = (Button) findViewById(R.id.btn_day_2);
 		btnDay2.setOnClickListener(this);
+		btnDay3 = (Button) findViewById(R.id.btn_day_3);
+		btnDay3.setOnClickListener(this);
+		btnDay4 = (Button) findViewById(R.id.btn_day_4);
+		btnDay4.setOnClickListener(this);
+		btnDay5 = (Button) findViewById(R.id.btn_day_5);
+		btnDay5.setOnClickListener(this);
+		btnDay6 = (Button) findViewById(R.id.btn_day_6);
+		btnDay6.setOnClickListener(this);
 		btnSearch = (Button) findViewById(R.id.btn_search);
 		btnSearch.setOnClickListener(this);
 		btnFavorites = (Button) findViewById(R.id.btn_favorites);
@@ -122,8 +130,7 @@ public class Main extends Activity implements ParserEventListener,
 	@Override
 	protected void onResume() {
 		super.onResume();
-		tvDbVer.setText(getString(R.string.db_ver) + " "
-				+ StringUtil.dateTimeToString(getDBLastUpdated()));
+		tvDbVer.setText(getString(R.string.db_ver, StringUtil.dateTimeToString(getDBLastUpdated())));
 
 		DBAdapter dbAdapter = new DBAdapter(this);
 		long count = 0;
@@ -133,6 +140,10 @@ public class Main extends Activity implements ParserEventListener,
 			count = dbAdapter.getEventCount();
 			btnDay1.setEnabled(count > 0);
 			btnDay2.setEnabled(count > 0);
+			btnDay3.setEnabled(count > 0);
+			btnDay4.setEnabled(count > 0);
+			btnDay5.setEnabled(count > 0);
+			btnDay6.setEnabled(count > 0);
 		} finally {
 			dbAdapter.close();
 		}
@@ -237,6 +248,18 @@ public class Main extends Activity implements ParserEventListener,
 		case R.id.btn_day_2:
 			showTracksForDay(2);
 			break;
+		case R.id.btn_day_3:
+			showTracksForDay(3);
+			break;
+		case R.id.btn_day_4:
+			showTracksForDay(4);
+			break;
+		case R.id.btn_day_5:
+			showTracksForDay(5);
+			break;
+		case R.id.btn_day_6:
+			showTracksForDay(6);
+			break;
 		case R.id.btn_search:
 			// nothing to do as btn is not active
 			break;
@@ -279,30 +302,33 @@ public class Main extends Activity implements ParserEventListener,
 			switch (msg.what) {
 			case TAGEVENT:
 				Main.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
-				tvProgress.setText("Fetched " + counter + " events.");
+				tvProgress.setText(getString(R.string.fetched_events, counter));
 				break;
 			case STARTFETCHING:
-				tvProgress.setText("Downloading...");
+				tvProgress.setText(getString(R.string.downloading));
 				break;
 			case DBAdapter.MSG_EVENT_STORED:
-				tvProgress.setText("Stored " + msg.arg1 + " events.");
+				tvProgress.setText(getString(R.string.stored_events, msg.arg1));
 				break;
 			case DONEFETCHING:
-				tvProgress.setText("Done fetching, loading into DB");
+				tvProgress.setText(getString(R.string.done_fetching));
 				setDBLastUpdated();
 				break;
 			case DONELOADINGDB:
-				final String doneDb = "Done loading into DB";
+				final String doneDb = getString(R.string.done_intodb);
 				tvProgress.setText(doneDb);
 				toast(doneDb);
-				tvDbVer.setText(getString(R.string.db_ver) + " "
-						+ StringUtil.dateTimeToString(getDBLastUpdated()));
+				tvDbVer.setText(getString(R.string.db_ver, StringUtil.dateTimeToString(getDBLastUpdated())));
 				DBAdapter db = new DBAdapter(Main.this);
 				db.open();
 				try {
 					long count = db.getEventCount();
 					btnDay1.setEnabled(count > 0);
 					btnDay2.setEnabled(count > 0);
+					btnDay3.setEnabled(count > 0);
+					btnDay4.setEnabled(count > 0);
+					btnDay5.setEnabled(count > 0);
+					btnDay6.setEnabled(count > 0);
 				} finally {
 					db.close();
 				}

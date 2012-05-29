@@ -42,12 +42,13 @@ public class EventAdapter extends ArrayAdapter<Event> {
 			TextView speaker = (TextView) v.findViewById(R.id.event_speakers);
 			TextView room = (TextView) v.findViewById(R.id.event_room);
 			TextView time = (TextView) v.findViewById(R.id.event_time);
+			TextView language = (TextView) v.findViewById(R.id.event_language);
 			
 			title.setText(event.getTitle());
 			speaker.setText(StringUtil.personsToString(event.getPersons()));
 			room.setText(event.getRoom());
 			time.setText(StringUtil.datesToString(event.getStart(), event.getDuration()));
-			
+			language.setText(event.getLanguage());
 		}
 		return v;
 	}

@@ -3,75 +3,106 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/main_bg"   >
-
+    android:background="@drawable/main_bg">
 	<LinearLayout
 		android:id="@+id/btn_days"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
 		>
-		
-	<Button 
-		android:id="@+id/btn_day_1"
-		android:text="Saturday"
-		
-		android:layout_width="fill_parent" 
-		android:layout_height="80dip"
-		android:layout_weight="1"
-		
-		android:textSize="20dip"
+		<Button
+			android:id="@+id/btn_day_1"
+			android:text="@string/day1"
+			android:layout_width="fill_parent"
+			android:layout_height="60dip"
+			android:layout_weight="1"
+			android:textSize="20dip"
+			/>
+		<Button
+			android:id="@+id/btn_day_2"
+			android:text="@string/day2"
+			android:layout_width="fill_parent"
+			android:layout_height="60dip"
+			android:layout_weight="1"
+			android:textSize="20dip"
+			/>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/btn_days1"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/btn_days"
+		>
+		<Button
+			android:id="@+id/btn_day_3"
+			android:text="@string/day3"
+			android:layout_width="fill_parent"
+			android:layout_height="60dip"
+			android:layout_weight="1"
+			android:textSize="20dip"
 		/>
-	<Button 
-		android:id="@+id/btn_day_2"
-		android:text="Sunday"
-		
-		android:layout_width="fill_parent" 
-		android:layout_height="80dip"
-		android:layout_weight="1"
-		
-		android:textSize="20dip"
+		<Button
+			android:id="@+id/btn_day_4"
+			android:text="@string/day4"
+			android:layout_width="fill_parent"
+			android:layout_height="60dip"
+			android:layout_weight="1"
+			android:textSize="20dip"
 		/>
-		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/btn_days2"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/btn_days1"
+		>
+		<Button
+			android:id="@+id/btn_day_5"
+			android:text="@string/day5"
+			android:layout_width="fill_parent"
+			android:layout_height="60dip"
+			android:layout_weight="1"
+			android:textSize="20dip"
+		/>
+		<Button
+			android:id="@+id/btn_day_6"
+			android:text="@string/day6"
+			android:layout_width="fill_parent"
+			android:layout_height="60dip"
+			android:layout_weight="1"
+			android:textSize="20dip"
+		/>
+	</LinearLayout>
 	<Button
 		android:id="@+id/btn_favorites"
 		android:text="@string/favorites"
-		android:layout_below="@id/btn_days"
+		android:layout_below="@id/btn_days2"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:textSize="20dip"/>
+		android:textSize="20dip" />
 	<Button 
 		android:id="@+id/btn_search"
-		android:text="To search press the Android search key"
-		
 		android:enabled="false"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
 		android:layout_below="@id/btn_favorites"
-		
 		android:textSize="14dip"
-		/>
+		android:text="@string/search_help" />
 	<RelativeLayout
 		android:id="@+id/texts"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		>
-	<TextView  
-	    android:id="@+id/progress"
-	    
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content" 
-	    />
-	    
-    <TextView  
-	    android:text="Database version"
-	    android:id="@+id/db_ver"
-	    
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content" 
-	    
-	    android:layout_below="@id/progress"
-	    />
+		android:layout_alignParentBottom="true">
+		<TextView  
+		    android:id="@+id/progress"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:textColor="@drawable/solid_white" />
+	    <TextView  
+		    android:id="@+id/db_ver"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_below="@id/progress"
+		    android:textColor="@drawable/solid_white"
+		    android:text="@string/db_ver" />
 	</RelativeLayout>
-
 </RelativeLayout>

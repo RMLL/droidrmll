@@ -38,11 +38,11 @@ public class TrackAdapter extends ArrayAdapter<Track> {
 		Track track = items.get(position);
 		if (track != null) {
 			TextView text1 = (TextView) v.findViewById(R.id.text1);
-			TextView textSmall = (TextView) v.findViewById(R.id.text_small);
+			//TextView textSmall = (TextView) v.findViewById(R.id.text_small);
 			
-			if (text1 != null && textSmall != null) {
+			if (text1 != null/* && textSmall != null*/) {
 				text1.setText(track.getName());
-				textSmall.setText(track.getType());
+				//textSmall.setText(track.getType());
 			}
 		}
 		return v;
