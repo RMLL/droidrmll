@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.text.Html;
 
 public class DisplayEvent extends Activity {
 
@@ -121,7 +122,7 @@ public class DisplayEvent extends Activity {
 			return;
 		}
 
-		tv.setText(value);
+		tv.setText(Html.fromHtml(value));
 	}
 
 	public void prefetchImageViewImageAndShowIt(final String filename) {
