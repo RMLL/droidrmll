@@ -50,6 +50,7 @@ public class FileUtil {
 				fos.write((char) nextChar);
 
 			fos.flush();
+			fos.close();
 		}
 
 		FileInputStream fis = new FileInputStream(CACHELOCATION + cacheName);
@@ -74,6 +75,7 @@ public class FileUtil {
 				fos.write((char) nextChar);
 
 			fos.flush();
+			fos.close();
 		}
 
 		FileInputStream fis = new FileInputStream(CACHELOCATION + cacheName);
