@@ -28,7 +28,7 @@
 	<string name="favorites">Sélection</string>
 	<string name="favorites_event_removed">Événement supprimé de la sélection</string>
 	<string name="favorites_event_added">Événement ajouté à la sélection</string>
-	<string name="share">Partager ...</string>
+	<string name="share">Partager…</string>
 	<string name="updater_title">Que voulez vous mettre à jour ?</string>
 	<string-array name="updater_dialog_choices">
 		<item name="updater_dialog_choices_xml">Mettre à jour le programme</item>
@@ -51,4 +51,5 @@
 	<string name="notification_time_help">Délai pour être averti du début d\'un événement à l\'avance</string>
 	<string name="favorites_upcoming">Événements à venir</string>
 	<string name="favorites_upcoming_help">Si coché, la sélection n\'affichera que les événements à venir</string>
+	<string name="room_image">Image de la salle</string>
 </resources>

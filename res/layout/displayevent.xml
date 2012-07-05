@@ -6,9 +6,9 @@
     android:background="@drawable/solid_white" >
 
 	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:orientation="vertical">
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
 
 	<RelativeLayout
 	    android:id="@+id/RelativeRootLayout"
@@ -33,7 +33,7 @@
 		    android:paddingLeft="5dip"
 		    android:paddingRight="25dip"
 		    android:paddingTop="5dip"
-		    android:text="Title"
+		    android:text="@string/test"
 		    android:textColor="#9EB62D"
 		    android:textSize="22dip"
 		    android:typeface="normal" >
@@ -56,7 +56,7 @@
 			    android:paddingLeft="3dip"
 			    android:paddingRight="3dip"
 			    android:paddingTop="2dip"
-			    android:text="event_track"
+			    android:text="@string/test"
 			    android:textColor="@drawable/solid_white" />
 
 	</RelativeLayout>
@@ -75,7 +75,7 @@
 			    android:paddingLeft="3dip"
 			    android:paddingRight="3dip"
 			    android:paddingTop="2dip"
-			    android:text="event_speaker"
+			    android:text="@string/test"
 			    android:textColor="@drawable/solid_black" />
 
 	</RelativeLayout>
@@ -95,7 +95,7 @@
 		    android:paddingLeft="3dip"
 		    android:paddingRight="3dip"
 		    android:paddingTop="2dip"
-		    android:text="event_time"
+		    android:text="@string/test"
 		    android:textColor="@drawable/solid_white" />
 
 		<TextView
@@ -107,7 +107,7 @@
 		    android:paddingLeft="3dip"
 		    android:paddingRight="3dip"
 		    android:paddingTop="2dip"
-		    android:text="event_language"
+		    android:text="@string/test"
 		    android:textColor="@drawable/solid_white" />
 
 	</RelativeLayout>
@@ -127,7 +127,7 @@
 		    android:paddingLeft="3dip"
 		    android:paddingRight="3dip"
 		    android:paddingTop="2dip"
-		    android:text="event_room"
+		    android:text="@string/test"
 		    android:textColor="@drawable/solid_black" />
 
 	</RelativeLayout>
@@ -148,14 +148,15 @@
 			android:paddingRight="10dip"
 			android:paddingTop="10dip"
 			android:paddingBottom="10dip"
-			android:text="event_description" />
+			android:text="@string/test" />
 
 		</RelativeLayout>
 
 		<ImageView
 			android:id="@+id/room_image"
 			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" />
+			android:layout_height="wrap_content"
+			android:contentDescription="@string/room_image" />
 
 	</LinearLayout>
 </ScrollView>
