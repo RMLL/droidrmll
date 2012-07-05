@@ -118,7 +118,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static String roomNameToURL(String name) {
-		return Main.ROOM_IMG_URL_BASE+name.replace(".", "").toLowerCase();
+		return Main.ROOM_IMG_URL_BASE+name.replace(" ", "_");
 	}
 
 	public static String dayIndexToDate(int dayindex) {
