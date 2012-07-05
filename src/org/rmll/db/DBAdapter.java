@@ -21,6 +21,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
@@ -494,23 +495,23 @@ public class DBAdapter extends ContentProvider {
 		StringBuilder sb = new StringBuilder();
 		if (tracks != null)
 			for (String track : tracks) {
-				sb.append(" or track='" + track + "'");
+				sb.append(" or track=" + DatabaseUtils.sqlEscapeString(track));
 			}
 		if (types != null)
 			for (String type : types) {
-				sb.append(" or eventtype='" + type + "'");
+				sb.append(" or eventtype=" + DatabaseUtils.sqlEscapeString(type));
 			}
 		if (tags != null)
 			for (String tag : tags) {
-				sb.append(" or tag='" + tag + "'");
+				sb.append(" or tag=" + DatabaseUtils.sqlEscapeString(tag));
 			}
 		if (rooms != null)
 			for (String room : rooms) {
-				sb.append(" or room='" + room + "'");
+				sb.append(" or room=" + DatabaseUtils.sqlEscapeString(room));
 			}
 		if (languages != null)
 			for (String language : languages) {
-				sb.append(" or language='" + language + "'");
+				sb.append(" or language=" + DatabaseUtils.sqlEscapeString(language));
 			}
 		if (beginDate != null && endDate != null) {
 			sb.append("and (start>=" + beginDate.getTime() + " and end<="
@@ -540,31 +541,31 @@ public class DBAdapter extends ContentProvider {
 		StringBuilder sb = new StringBuilder();
 		if (titles != null)
 			for (String title : titles) {
-				sb.append(" or title like '%" + title + "%'");
+				sb.append(" or title like " + DatabaseUtils.sqlEscapeString("%" + title + "%"));
 			}
 		if (tracks != null)
 			for (String track : tracks) {
-				sb.append(" or track like '%" + track + "%'");
+				sb.append(" or track like " + DatabaseUtils.sqlEscapeString("%" + track + "%"));
 			}
 		if (types != null)
 			for (String type : types) {
-				sb.append(" or eventtype like '%" + type + "%'");
+				sb.append(" or eventtype like " + DatabaseUtils.sqlEscapeString("%" + type + "%"));
 			}
 		if (tags != null)
 			for (String tag : tags) {
-				sb.append(" or tag like '%" + tag + "%'");
+				sb.append(" or tag like " + DatabaseUtils.sqlEscapeString("%" + tag + "%"));
 			}
 		if (rooms != null)
 			for (String room : rooms) {
-				sb.append(" or room like '%" + room + "%'");
+				sb.append(" or room like " + DatabaseUtils.sqlEscapeString("%" + room + "%"));
 			}
 		if (languages != null)
 			for (String language : languages) {
-				sb.append(" or language like '%" + language + "%'");
+				sb.append(" or language like " + DatabaseUtils.sqlEscapeString("%" + language + "%"));
 			}
 		if (persons != null)
 			for (String person : persons) {
-				sb.append(" or personsearch like '%" + person + "%'");
+				sb.append(" or personsearch like " + DatabaseUtils.sqlEscapeString("%" + person + "%"));
 			}
 		if (beginDate != null && endDate != null) {
 			sb.append("and (start>=" + beginDate.getTime() + " and end<="
