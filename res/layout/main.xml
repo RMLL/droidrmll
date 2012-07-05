@@ -3,11 +3,19 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/main_bg">
+    android:background="@drawable/solid_white"
+    >
+    <LinearLayout
+		android:id="@+id/header"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:background="@drawable/main_bg">
+	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/btn_days"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
+		android:layout_below="@id/header"
 		>
 		<Button
 			android:id="@+id/btn_day_1"
@@ -96,13 +104,13 @@
 		    android:id="@+id/progress"
 		    android:layout_width="fill_parent" 
 		    android:layout_height="wrap_content"
-		    android:textColor="@drawable/solid_white" />
+		    android:textColor="@drawable/solid_black" />
 	    <TextView  
 		    android:id="@+id/db_ver"
 		    android:layout_width="fill_parent" 
 		    android:layout_height="wrap_content" 
 		    android:layout_below="@id/progress"
-		    android:textColor="@drawable/solid_white"
+		    android:textColor="@drawable/solid_black"
 		    android:text="@string/db_ver" />
 	</RelativeLayout>
 </RelativeLayout>

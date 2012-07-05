@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView 
-	android:id="@+id/ScrollView01"  
-	xmlns:android="http://schemas.android.com/apk/res/android" 
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent"
-	android:background="#ecfaff">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/solid_white" >
+
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:orientation="vertical">
-	<RelativeLayout 
-		android:id="@+id/RelativeRootLayout" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content" 
-		android:orientation="vertical" 
-		android:background="@drawable/eventtopbg">
+
+	<RelativeLayout
+	    android:id="@+id/RelativeRootLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/solid_white"
+	    android:orientation="vertical" >
+
 		<org.rmll.views.FavoriteButton
 			android:id="@+id/favoriteButton"
 			android:layout_width="wrap_content"
@@ -22,103 +24,121 @@
 			android:layout_alignParentRight="true"
 			android:paddingTop="10dip"
 			android:paddingRight="10dip" />
-		<TextView 
-			android:id="@+id/event_title"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content"
-			android:paddingRight="25dip"
-			android:paddingLeft="5dip"
-			android:paddingTop="5dip"
-			android:paddingBottom="5dip"
-			android:textColor="#107ea3" 
-			android:textSize="22dip"  
-			android:text="Title">
+
+		<TextView
+		    android:id="@+id/event_title"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingBottom="5dip"
+		    android:paddingLeft="5dip"
+		    android:paddingRight="25dip"
+		    android:paddingTop="5dip"
+		    android:text="Title"
+		    android:textColor="#9EB62D"
+		    android:textSize="22dip"
+		    android:typeface="normal" >
+
 		</TextView>
 	</RelativeLayout>
+
 	<RelativeLayout
-		android:id="@+id/RelativeTrackLayout"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:background="@drawable/eventmetabg">
+	    android:id="@+id/RelativeTrackLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/solid_black"
+	    android:orientation="vertical" >
+
 			<TextView
-				android:id="@+id/event_track"
-				android:layout_height="wrap_content"
-				android:layout_width="fill_parent"
-				android:paddingLeft="3dip"
-				android:paddingRight="3dip"
-				android:paddingTop="2dip"
-				android:paddingBottom="2dip"
-				android:textColor="#107ea3"
-				android:text="event_track" />
+			    android:id="@+id/event_track"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:paddingBottom="2dip"
+			    android:paddingLeft="3dip"
+			    android:paddingRight="3dip"
+			    android:paddingTop="2dip"
+			    android:text="event_track"
+			    android:textColor="@drawable/solid_white" />
+
 	</RelativeLayout>
+
 	<RelativeLayout
-		android:id="@+id/RelativeSpeakerLayout"
-		android:background="@drawable/eventmetabg"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent">
+	    android:id="@+id/RelativeSpeakerLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/solid_white" >
+
 			<TextView
-				android:id="@+id/event_speaker"
-				android:layout_height="wrap_content"
-				android:layout_width="wrap_content"
-				android:paddingLeft="3dip"
-				android:paddingRight="3dip"
-				android:paddingTop="2dip"
-				android:paddingBottom="2dip"
-				android:textColor="#107ea3"
-				android:text="event_speaker" />
+			    android:id="@+id/event_speaker"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:paddingBottom="2dip"
+			    android:paddingLeft="3dip"
+			    android:paddingRight="3dip"
+			    android:paddingTop="2dip"
+			    android:text="event_speaker"
+			    android:textColor="@drawable/solid_black" />
+
 	</RelativeLayout>
+
 	<RelativeLayout
-		android:id="@+id/MetaTimeLayout" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content" 
-		android:orientation="vertical" 
-		android:background="@drawable/eventmetabg">
-		<TextView  
-			android:id="@+id/event_time" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" 
-			android:textColor="#107ea3"
-			android:paddingLeft="3dip"
-			android:paddingRight="3dip"
-			android:paddingTop="2dip"
-			android:paddingBottom="2dip"
-			android:text="event_time" />
-		<TextView 
-			android:id="@+id/event_language" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content"
-			android:layout_alignParentRight="true"
-			android:textColor="#107ea3"
-			android:paddingLeft="3dip"
-			android:paddingRight="3dip"
-			android:paddingTop="2dip"
-			android:paddingBottom="2dip"
-			android:text="event_language" />
-	</RelativeLayout>
-	<RelativeLayout
-		android:id="@+id/MetaRoomLayout" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content" 
-		android:orientation="vertical" 
-		android:background="@drawable/eventmetabg">
+	    android:id="@+id/MetaTimeLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/solid_black"
+	    android:orientation="vertical" >
+
 		<TextView
-			android:id="@+id/event_room" 			
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" 
-			android:paddingLeft="3dip"
-			android:paddingRight="3dip"
-			android:paddingTop="2dip"
-			android:paddingBottom="2dip"
-			android:textColor="#107ea3"
-			android:text="event_room" />
+		    android:id="@+id/event_time"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:paddingBottom="2dip"
+		    android:paddingLeft="3dip"
+		    android:paddingRight="3dip"
+		    android:paddingTop="2dip"
+		    android:text="event_time"
+		    android:textColor="@drawable/solid_white" />
+
+		<TextView
+		    android:id="@+id/event_language"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:paddingBottom="2dip"
+		    android:paddingLeft="3dip"
+		    android:paddingRight="3dip"
+		    android:paddingTop="2dip"
+		    android:text="event_language"
+		    android:textColor="@drawable/solid_white" />
+
 	</RelativeLayout>
-	<RelativeLayout 
-		android:id="@+id/BodyLayout" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content" 
-		android:orientation="vertical" 
-		android:background="#ecfaff">
+
+	<RelativeLayout
+	    android:id="@+id/MetaRoomLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/solid_white"
+	    android:orientation="vertical" >
+
+		<TextView
+		    android:id="@+id/event_room"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:paddingBottom="2dip"
+		    android:paddingLeft="3dip"
+		    android:paddingRight="3dip"
+		    android:paddingTop="2dip"
+		    android:text="event_room"
+		    android:textColor="@drawable/solid_black" />
+
+	</RelativeLayout>
+
+	<RelativeLayout
+	    android:id="@+id/BodyLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/solid_white"
+	    android:orientation="vertical" >
+
 		<TextView 
 			android:id="@+id/event_description" 
 			android:layout_width="fill_parent" 
@@ -129,10 +149,13 @@
 			android:paddingTop="10dip"
 			android:paddingBottom="10dip"
 			android:text="event_description" />
+
 		</RelativeLayout>
+
 		<ImageView
 			android:id="@+id/room_image"
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" />
+
 	</LinearLayout>
 </ScrollView>
