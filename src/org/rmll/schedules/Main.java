@@ -51,8 +51,8 @@ public class Main extends Activity implements ParserEventListener,
 	private static final int SETTINGS_ID = Menu.FIRST + 2;
 
 	public static final String PREFS = "org.rmll";
-	public static final String XML_URL = "http://schedule2013.rmll.info/schedule/xml";
-	public static final String ROOM_IMG_URL_BASE = "http://schedule2013.rmll.info/schedule/room/";
+	public static final String XML_URL = "https://2014.rmll.info/schedule/xml";
+	public static final String ROOM_IMG_URL_BASE = "https://2014.rmll.info/schedule/room/";
 
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;
