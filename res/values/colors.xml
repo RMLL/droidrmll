@@ -19,7 +19,4 @@
 	<drawable name="solid_white">#ffffffff</drawable>
 	<drawable name="solid_black">#ff000000</drawable>
 	<drawable name="gray_text_color">#ffaaaaaa</drawable>
-	<drawable name="dark_gray">#333</drawable>
-	<drawable name="dark_green">#007</drawable>
-	<drawable name="rmll_blue">#ff80B11E</drawable>
 </resources>

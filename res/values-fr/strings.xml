@@ -4,9 +4,7 @@
 	<string name="search_help">Pour faire une recherche, utiliser le bouton de recherche Android (la loupe)</string>
 	<string name="menu_settings">Paramètres</string>
 	<string name="menu_about">A propos</string>
-	<string name="menu_testing">Tests</string>
 	<string name="menu_update">Mise à jour</string>
-    <string name="menu_quit">Quitter</string>
 	<string name="search_label">Recherche</string>
 	<string name="fetched_events">Téléchargement de %d événement(s)…</string>
 	<string name="downloading">Téléchargement en cours…</string>
@@ -17,11 +15,6 @@
 	<string name="trackslist_title">Thèmes du %s</string>
 	<string name="eventslist_title">%1$s - %2$s</string>
 	<string name="settings_description">Recherche RMLL</string>   
-	<string name="menu_test_display_event">Afficher l\'événement</string>
-	<string name="menu_prefetch_rooms">Préchargement des plans</string> 
-	<string name="synchronize_button">Synchroniser</string>
-	<string name="synchronize_title">Synchroniser</string>
-	<string name="synchronize_description">Synchronisation avec le programme affiché sur le site\n\nVous avez besoin d\'une connection à Internet pour que cela fonctionne.</string>
 	<string name="about_text1">Programme des RMLL</string>
 	<string name="about_text2">Adapté depuis l\'application android du Fosdem par : Emmanuel Bouthenot</string>
 	<string name="about_text3">L\'application android pour le Fosdem a été développée par : Michaël Uyttersprot, Pieter Iserbyt and Christophe Vandeplas.</string> 
@@ -51,7 +44,6 @@
 	<string name="notification_time_help">Délai pour être averti du début d\'un événement à l\'avance</string>
 	<string name="favorites_upcoming">Événements à venir</string>
 	<string name="favorites_upcoming_help">Si coché, la sélection n\'affichera que les événements à venir</string>
-	<string name="track">Thème %s</string>
 	<string name="test">test</string>
 	<string name="room_image">Image de la salle</string>
 </resources>
