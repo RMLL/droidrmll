@@ -35,7 +35,7 @@
 		    android:paddingTop="5dip"
 		    android:text="@string/test"
 		    android:textColor="#9EB62D"
-		    android:textSize="22dip"
+		    android:textSize="22sp"
 		    android:typeface="normal" >
 
 		</TextView>

@@ -1,4 +1,5 @@
-/.settings/
-/bin/
-/gen/
-/project.properties
+.settings/
+bin/
+gen/
+local.properties
+build.xml

@@ -14,7 +14,7 @@
 	    android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
         android:paddingTop="2dip"
-        android:textSize="16dip"
+        android:textSize="16sp"
 		android:textStyle="bold"
 		android:text="title"
 		android:textColor="@drawable/solid_white" />
@@ -25,14 +25,14 @@
 		android:layout_below="@id/event_title"
         android:layout_alignParentLeft="true"
         android:textStyle="bold"
-		android:textSize="12dip"
+		android:textSize="12sp"
 		android:text="speaker" />
 	<TextView
         android:id="@+id/event_time"
 	    android:layout_width="wrap_content"
    		android:layout_height="wrap_content"
 		android:layout_below="@id/event_speakers"
-        android:textSize="12dip"
+        android:textSize="12sp"
 		android:text="time" />
 	<TextView
         android:id="@+id/event_language"
@@ -42,7 +42,7 @@
    		android:layout_alignParentRight="true"
         android:paddingBottom="2dip"
 		android:textColor="@drawable/gray_text_color"
-		android:textSize="12dip"
+		android:textSize="12sp"
 		android:text="language" />
 	<TextView
         android:id="@+id/event_room"
@@ -51,7 +51,7 @@
 		android:layout_below="@+id/event_time"
         android:paddingBottom="2dip"
 		android:textColor="@drawable/gray_text_color"
-		android:textSize="12dip"
+		android:textSize="12sp"
 		android:text="room" />
     <View
         android:id="@+id/star_delegate"

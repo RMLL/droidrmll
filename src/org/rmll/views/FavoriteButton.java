@@ -4,7 +4,6 @@ import org.rmll.db.DBAdapter;
 import org.rmll.pojo.Event;
 import org.rmll.util.UIUtil;
 
-import android.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -37,7 +36,7 @@ public class FavoriteButton extends ImageView implements OnClickListener {
 	
 	public FavoriteButton(Context context,AttributeSet attributeSet){
 		super(context,attributeSet);
-		this.setImageResource(R.drawable.btn_star_big_off);
+		this.setImageResource(android.R.drawable.btn_star_big_off);
 	}
 
 	protected void initialize() {
@@ -59,9 +58,9 @@ public class FavoriteButton extends ImageView implements OnClickListener {
 
 	protected void setImageResource() {
 		if (isFavorite) {
-			this.setImageResource(R.drawable.btn_star_big_on);
+			this.setImageResource(android.R.drawable.btn_star_big_on);
 		} else
-			this.setImageResource(R.drawable.btn_star_big_off);
+			this.setImageResource(android.R.drawable.btn_star_big_off);
 	}
 
 	public void onClick(View v) {
