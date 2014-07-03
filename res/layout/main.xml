@@ -6,6 +6,7 @@
     android:background="@drawable/solid_white"
     >
     <LinearLayout
+        android:orientation="horizontal"
 		android:id="@+id/header"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
@@ -80,21 +81,7 @@
 			android:textSize="20sp"
 		/>
 	</LinearLayout>
-	<Button
-		android:id="@+id/btn_favorites"
-		android:text="@string/favorites"
-		android:layout_below="@id/btn_days2"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:textSize="20sp" />
-	<Button 
-		android:id="@+id/btn_search"
-		android:enabled="false"
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"
-		android:layout_below="@id/btn_favorites"
-		android:textSize="14sp"
-		android:text="@string/search_help" />
+
 	<RelativeLayout
 		android:id="@+id/texts"
 		android:layout_width="fill_parent" 
@@ -113,4 +100,33 @@
 		    android:textColor="@drawable/solid_black"
 		    android:text="@string/db_ver" />
 	</RelativeLayout>
+
+	<Button
+	    android:id="@+id/btn_day_7"
+	    android:layout_width="fill_parent"
+	    android:layout_height="60dip"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/btn_days2"
+	    android:layout_weight="1"
+	    android:text="@string/day7"
+	    android:textSize="20sp" />
+
+	<Button
+	    android:id="@+id/btn_favorites"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/btn_day_7"
+	    android:text="@string/favorites"
+	    android:textSize="20sp" />
+
+	<Button
+	    android:id="@+id/btn_search"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/btn_favorites"
+	    android:text="@string/search_help"
+	    android:textSize="20sp" />
+
 </RelativeLayout>
