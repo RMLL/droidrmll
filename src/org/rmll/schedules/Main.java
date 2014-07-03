@@ -141,6 +141,7 @@ public class Main extends Activity implements ParserEventListener,
 			dbAdapter.open();
 			btnFavorites.setEnabled(dbAdapter.getBookmarkCount() > 0);
 			count = dbAdapter.getEventCount();
+			btnSearch.setEnabled(count > 0);
 			btnDay1.setEnabled(count > 0);
 			btnDay2.setEnabled(count > 0);
 			btnDay3.setEnabled(count > 0);
@@ -330,12 +331,14 @@ public class Main extends Activity implements ParserEventListener,
 				db.open();
 				try {
 					long count = db.getEventCount();
+					btnSearch.setEnabled(count > 0);
 					btnDay1.setEnabled(count > 0);
 					btnDay2.setEnabled(count > 0);
 					btnDay3.setEnabled(count > 0);
 					btnDay4.setEnabled(count > 0);
 					btnDay5.setEnabled(count > 0);
 					btnDay6.setEnabled(count > 0);
+					btnDay7.setEnabled(count > 0);
 				} finally {
 					db.close();
 				}

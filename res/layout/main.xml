@@ -116,7 +116,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/btn_day_7"
+	    android:layout_below="@+id/btn_search"
 	    android:text="@string/favorites"
 	    android:textSize="20sp" />
 
@@ -125,7 +125,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/btn_favorites"
+	    android:layout_below="@+id/btn_day_7"
 	    android:text="@string/search_help"
 	    android:textSize="20sp" />
 
