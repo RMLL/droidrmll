@@ -56,7 +56,7 @@ public class Main extends Activity implements ParserEventListener,
 
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;
-	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6;
+	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6, btnDay7;
 	protected Button btnSearch, btnFavorites;
 
 	@SuppressWarnings("unused")
@@ -116,6 +116,8 @@ public class Main extends Activity implements ParserEventListener,
 		btnDay5.setOnClickListener(this);
 		btnDay6 = (Button) findViewById(R.id.btn_day_6);
 		btnDay6.setOnClickListener(this);
+		btnDay7 = (Button) findViewById(R.id.btn_day_7);
+		btnDay7.setOnClickListener(this);
 		btnSearch = (Button) findViewById(R.id.btn_search);
 		btnSearch.setOnClickListener(this);
 		btnFavorites = (Button) findViewById(R.id.btn_favorites);
@@ -139,12 +141,14 @@ public class Main extends Activity implements ParserEventListener,
 			dbAdapter.open();
 			btnFavorites.setEnabled(dbAdapter.getBookmarkCount() > 0);
 			count = dbAdapter.getEventCount();
+			btnSearch.setEnabled(count > 0);
 			btnDay1.setEnabled(count > 0);
 			btnDay2.setEnabled(count > 0);
 			btnDay3.setEnabled(count > 0);
 			btnDay4.setEnabled(count > 0);
 			btnDay5.setEnabled(count > 0);
 			btnDay6.setEnabled(count > 0);
+			btnDay7.setEnabled(count > 0);
 		} finally {
 			dbAdapter.close();
 		}
@@ -261,8 +265,11 @@ public class Main extends Activity implements ParserEventListener,
 		case R.id.btn_day_6:
 			showTracksForDay(6);
 			break;
+		case R.id.btn_day_7:
+			showTracksForDay(7);
+			break;
 		case R.id.btn_search:
-			// nothing to do as btn is not active
+			onSearchRequested();
 			break;
 		case R.id.btn_favorites:
 			showFavorites();
@@ -324,12 +331,14 @@ public class Main extends Activity implements ParserEventListener,
 				db.open();
 				try {
 					long count = db.getEventCount();
+					btnSearch.setEnabled(count > 0);
 					btnDay1.setEnabled(count > 0);
 					btnDay2.setEnabled(count > 0);
 					btnDay3.setEnabled(count > 0);
 					btnDay4.setEnabled(count > 0);
 					btnDay5.setEnabled(count > 0);
 					btnDay6.setEnabled(count > 0);
+					btnDay7.setEnabled(count > 0);
 				} finally {
 					db.close();
 				}

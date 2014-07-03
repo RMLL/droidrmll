@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">RMLL</string>
-	<string name="search_help">Pour faire une recherche, utiliser le bouton de recherche Android (la loupe)</string>
+	<string name="search_help">Recherche</string>
 	<string name="menu_settings">Paramètres</string>
 	<string name="menu_about">A propos</string>
 	<string name="menu_update">Mise à jour</string>
@@ -33,6 +33,7 @@
 	<string name="day4">Mardi</string>
 	<string name="day5">Mercredi</string>
 	<string name="day6">Jeudi</string>
+	<string name="day7">Vendredi</string>
 	<string name="notifications">Notifications</string>
 	<string name="enable_notifications">Activer les alertes</string>
 	<string name="enable_notifications_help">Si coché, vous serez alerté du départ imminent des événements que vous avez sélectionné</string>
