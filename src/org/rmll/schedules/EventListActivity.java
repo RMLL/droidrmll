@@ -62,7 +62,7 @@ public class EventListActivity extends ListActivity {
 		if (query != null)
 			setTitle("Search for: " + query);
 		if (favorites != null && favorites) {
-			setTitle("Favorites");
+			setTitle(getString(R.string.favorites));
 			
 			registerReceiver(favoritesChangedReceiver, new IntentFilter(
 					FavoritesBroadcast.ACTION_FAVORITES_UPDATE));

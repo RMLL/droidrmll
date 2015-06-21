@@ -91,21 +91,21 @@
 
 	<RelativeLayout
 		android:id="@+id/texts"
-		android:layout_width="fill_parent" 
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true">
 		<TextView  
 		    android:id="@+id/progress"
-		    android:layout_width="fill_parent" 
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:textColor="@drawable/solid_black" />
 	    <TextView  
 		    android:id="@+id/db_ver"
-		    android:layout_width="fill_parent" 
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content" 
 		    android:layout_below="@id/progress"
 		    android:textColor="@drawable/solid_black"
-		    android:text="@string/db_ver" />
+		    android:text="@string/schedule_last_updated" />
 	</RelativeLayout>
 
 	<Button

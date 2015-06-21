@@ -132,7 +132,7 @@ public class Main extends Activity implements ParserEventListener,
 	@Override
 	protected void onResume() {
 		super.onResume();
-		tvDbVer.setText(getString(R.string.db_ver, StringUtil.dateTimeToString(getDBLastUpdated())));
+		tvDbVer.setText(getString(R.string.schedule_last_updated, StringUtil.dateTimeToString(getDBLastUpdated())));
 
 		DBAdapter dbAdapter = new DBAdapter(this);
 		long count = 0;
@@ -290,23 +290,23 @@ public class Main extends Activity implements ParserEventListener,
 			switch (msg.what) {
 			case TAGEVENT:
 				Main.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
-				tvProgress.setText(getString(R.string.fetched_events, counter));
+				tvProgress.setText(getString(R.string.fetched_talks, counter));
 				break;
 			case STARTFETCHING:
-				tvProgress.setText(getString(R.string.downloading));
+				tvProgress.setText(getString(R.string.downloading_talks));
 				break;
 			case DBAdapter.MSG_EVENT_STORED:
-				tvProgress.setText(getString(R.string.stored_events, msg.arg1));
+				tvProgress.setText(getString(R.string.stored_talks, msg.arg1));
 				break;
 			case DONEFETCHING:
-				tvProgress.setText(getString(R.string.done_fetching));
+				tvProgress.setText(getString(R.string.done_fetching_talks));
 				setDBLastUpdated();
 				break;
 			case DONELOADINGDB:
-				final String doneDb = getString(R.string.done_intodb);
-				tvProgress.setText(doneDb);
+				final String doneDb = getString(R.string.done_storing_talks);
+				tvProgress.setText("");
 				toast(doneDb);
-				tvDbVer.setText(getString(R.string.db_ver, StringUtil.dateTimeToString(getDBLastUpdated())));
+				tvDbVer.setText(getString(R.string.schedule_last_updated, StringUtil.dateTimeToString(getDBLastUpdated())));
 				DBAdapter db = new DBAdapter(Main.this);
 				db.open();
 				try {
@@ -323,11 +323,11 @@ public class Main extends Activity implements ParserEventListener,
 				}
 				break;
 			case ROOMIMGSTART:
-				tvProgress.setText("Downloading room images...");
+				tvProgress.setText(getString(R.string.downloading_rooms));
 				break;
 			case ROOMIMGDONE:
-				final String doneRooms = "Room Images downloaded";
-				tvProgress.setText(doneRooms);
+				final String doneRooms = getString(R.string.done_downloading_rooms);
+				tvProgress.setText("");
 				toast(doneRooms);
 				break;
 			/*case LOAD_BG_START:
