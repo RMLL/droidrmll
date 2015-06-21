@@ -123,9 +123,9 @@ public class StringUtil {
 
 	public static String dayIndexToDate(int dayindex) {
 		// hardcoded date for now
-		int year = 2014;
+		int year = 2015;
 		int month = 7;
-		int day = 5;
+		int day = 4;
 	
 		Calendar cal = Calendar.getInstance();
 		cal.set(year, month-1, day);
