@@ -11,6 +11,8 @@
 	<string name="stored_talks">Stored %d talks…</string>
 	<string name="done_fetching_talks">Fetching schedule done, loading talks into database…</string>
 	<string name="done_storing_talks">Loading talks done</string>
+	<string name="downloading_rooms">Downloading rooms floor plans…</string>
+	<string name="done_downloading_rooms">Downloading rooms floor plans done</string>
 	<string name="schedule_last_updated">Last updated: %s</string>
 	<string name="trackslist_title">Tracks for %s</string>
 	<string name="eventslist_title">%1$s - %2$s</string>

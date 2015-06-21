@@ -15,6 +15,7 @@ import org.rmll.util.StringUtil;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 /**
  * @author sandbender
@@ -45,9 +46,7 @@ public class BackgroundUpdater implements Runnable {
 		this.handler = handler;
 		this.parseEventListener = parseEventListener;
 		this.context = context;
-		//this.doUpdateRooms = updateRooms;
-		// no rooms yet
-		this.doUpdateRooms = false;
+		this.doUpdateRooms = updateRooms;
 		this.doUpdateXml = updateXml;
 	}
 
@@ -111,9 +110,8 @@ public class BackgroundUpdater implements Runnable {
 
 		// Download the images in the background
 		for (final String room : rooms) {
-			// Log.d(LOG_TAG, "Downloading room image:" + room);
+			Log.d(Main.LOG_TAG, "Downloading room image:" + room + " from " + StringUtil.roomNameToURL(room));
 			try {
-				System.out.println("dbg: "+StringUtil.roomNameToURL(room));
 				FileUtil.fetchCached(StringUtil.roomNameToURL(room));
 			} catch (MalformedURLException e) {
 			} catch (IOException e) {

@@ -11,6 +11,8 @@
 	<string name="stored_talks">Enregistrement de %d conférence(s)…</string>
 	<string name="done_fetching_talks">Enregistrement des conférences en cours…</string>
 	<string name="done_storing_talks">L\'enregistrement des conférérences est terminé</string>
+	<string name="downloading_rooms">Téléchargement des plans des salles en cours…</string>
+	<string name="done_downloading_rooms">Le téléchargement des plans des salles est terminé.</string>
 	<string name="schedule_last_updated">Dernière mise à jour : %s</string>
 	<string name="trackslist_title">Thèmes du %s</string>
 	<string name="eventslist_title">%1$s - %2$s</string>

@@ -166,17 +166,27 @@
 			android:textColor="#000"
 			android:paddingLeft="10dip"
 			android:paddingRight="10dip"
-			android:paddingTop="10dip"
-			android:paddingBottom="10dip"
+			android:paddingTop="0dip"
+			android:paddingBottom="0dip"
 			android:text="@string/test" />
 
-		</RelativeLayout>
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/RoomLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/solid_white">
 
 		<ImageView
 			android:id="@+id/room_image"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content"
-			android:contentDescription="@string/room_image" />
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:contentDescription="@string/room_image"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter" />
+
+	</RelativeLayout>
 
 	</LinearLayout>
 </ScrollView>
