@@ -8,13 +8,20 @@
     <LinearLayout
         android:orientation="horizontal"
 		android:id="@+id/header"
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"
-		android:background="@drawable/main_bg">
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<ImageView
+			android:id="@+id/logo"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:src="@drawable/logo"
+			android:scaleType="center"
+			/>
 	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/btn_days"
-		android:layout_width="fill_parent" 
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/header"
 		>
