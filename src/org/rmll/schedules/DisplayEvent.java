@@ -185,7 +185,7 @@ public class DisplayEvent extends Activity {
 				.getPersons()));
 		
 		setTextViewText(R.id.event_language, event.getLanguage());
-		//setTextViewText(R.id.event_abstract, eventAbstract);
+		setTextViewText(R.id.event_abstract, eventAbstract);
 		setTextViewText(R.id.event_description, eventDescription);
 
 		// setImageViewImage(R.id.room_image,

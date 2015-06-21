@@ -133,6 +133,26 @@
 	</RelativeLayout>
 
 	<RelativeLayout
+		android:id="@+id/AbstractLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/solid_white"
+		android:orientation="vertical" >
+
+		<TextView
+			android:id="@+id/event_abstract"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:textColor="#000"
+			android:paddingLeft="10dip"
+			android:paddingRight="10dip"
+			android:paddingTop="0dip"
+			android:paddingBottom="0dip"
+			android:text="@string/test" />
+
+	</RelativeLayout>
+
+	<RelativeLayout
 	    android:id="@+id/BodyLayout"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
