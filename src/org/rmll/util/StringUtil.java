@@ -130,6 +130,6 @@ public class StringUtil {
 		Calendar cal = Calendar.getInstance();
 		cal.set(year, month-1, day);
 		cal.add(Calendar.DAY_OF_MONTH, dayindex-1);
-		return new SimpleDateFormat("EEEEEEEE dd").format(cal.getTime());
+		return new SimpleDateFormat("EEEE dd").format(cal.getTime());
 	}
 }
