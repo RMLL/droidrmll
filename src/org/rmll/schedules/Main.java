@@ -8,6 +8,7 @@ import org.rmll.db.DBAdapter;
 import org.rmll.listeners.ParserEventListener;
 import org.rmll.util.StringUtil;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -26,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,13 +45,6 @@ public class Main extends Activity implements ParserEventListener,
 	public static final int LOAD_BG_START = 5;
 	public static final int LOAD_BG_END = 6;
 
-	protected static final int DIALOG_ABOUT = 0;
-	protected static final int DIALOG_UPDATE = 1;
-
-	private static final int ABOUT_ID = Menu.FIRST;
-	private static final int UPDATE_ID = Menu.FIRST + 1;
-	private static final int SETTINGS_ID = Menu.FIRST + 2;
-
 	public static final String PREFS = "org.rmll";
 	public static final String XML_URL = "https://2015.rmll.info/schedule/xml";
 	public static final String ROOM_IMG_URL_BASE = "https://2015.rmll.info/schedule/room/";
@@ -57,7 +52,7 @@ public class Main extends Activity implements ParserEventListener,
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;
 	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6, btnDay7;
-	protected Button btnSearch, btnFavorites;
+	protected Button btnFavorites;
 
 	@SuppressWarnings("unused")
 	private BroadcastReceiver favoritesChangedReceiver = new BroadcastReceiver() {
@@ -84,7 +79,7 @@ public class Main extends Activity implements ParserEventListener,
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		final Intent intent = getIntent();
 		final String queryAction = intent.getAction();
 		if (Intent.ACTION_SEARCH.equals(queryAction)) {
@@ -102,6 +97,12 @@ public class Main extends Activity implements ParserEventListener,
 		Intent initialLoadIntent = new Intent(FavoritesBroadcast.ACTION_FAVORITES_INITIAL_LOAD);
 		sendBroadcast(initialLoadIntent);
 
+		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+		ActionBar actionBar = getActionBar();
+		if (actionBar != null) {
+			actionBar.show();
+		}
+
 		setContentView(R.layout.main);
 
 		btnDay1 = (Button) findViewById(R.id.btn_day_1);
@@ -118,8 +119,6 @@ public class Main extends Activity implements ParserEventListener,
 		btnDay6.setOnClickListener(this);
 		btnDay7 = (Button) findViewById(R.id.btn_day_7);
 		btnDay7.setOnClickListener(this);
-		btnSearch = (Button) findViewById(R.id.btn_search);
-		btnSearch.setOnClickListener(this);
 		btnFavorites = (Button) findViewById(R.id.btn_favorites);
 		btnFavorites.setOnClickListener(this);
 
@@ -141,7 +140,6 @@ public class Main extends Activity implements ParserEventListener,
 			dbAdapter.open();
 			btnFavorites.setEnabled(dbAdapter.getBookmarkCount() > 0);
 			count = dbAdapter.getEventCount();
-			btnSearch.setEnabled(count > 0);
 			btnDay1.setEnabled(count > 0);
 			btnDay2.setEnabled(count > 0);
 			btnDay3.setEnabled(count > 0);
@@ -154,7 +152,7 @@ public class Main extends Activity implements ParserEventListener,
 		}
 
 		if (count < 1) {
-			showDialog(DIALOG_UPDATE);
+			createUpdateDialog();
 		}
 
 		// FIXME on first startup
@@ -163,15 +161,28 @@ public class Main extends Activity implements ParserEventListener,
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		// menu.add(0, SETTINGS_ID, 2,
-		// R.string.menu_settings).setIcon(android.R.drawable.ic_menu_preferences);
-		menu.add(0, UPDATE_ID, 2, R.string.menu_update).setIcon(
-				R.drawable.menu_refresh);
-		menu.add(0, ABOUT_ID, 2, R.string.menu_about).setIcon(
-				android.R.drawable.ic_menu_info_details);
-		menu.add(0, SETTINGS_ID, 2, R.string.menu_settings).setIcon(
-				android.R.drawable.ic_menu_preferences);
+		getMenuInflater().inflate(R.menu.main_actions, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.action_search:
+				onSearchRequested();
+				break;
+			case R.id.action_refresh:
+				createUpdateDialog();
+				break;
+			case R.id.action_settings:
+				showSettings();
+				break;
+			case R.id.action_about:
+				createAboutDialog();
+				break;
+			default:
+				break;
+		}
 		return true;
 	}
 
@@ -187,7 +198,7 @@ public class Main extends Activity implements ParserEventListener,
 		builder.setView(view);
 		builder.setPositiveButton(getString(android.R.string.ok), null);
 		builder.setCancelable(true);
-		return builder.create();
+		return builder.show();
 	}
 
 	/**
@@ -229,19 +240,7 @@ public class Main extends Activity implements ParserEventListener,
 		builder.setNegativeButton(getString(android.R.string.cancel), null);
 		builder.setCancelable(true);
 
-		return builder.create();
-	}
-
-	@Override
-	protected Dialog onCreateDialog(int id) {
-		switch (id) {
-		case DIALOG_ABOUT:
-			return createAboutDialog();
-		case DIALOG_UPDATE:
-			return createUpdateDialog();
-		default:
-			return null;
-		}
+		return builder.show();
 	}
 
 	public void onClick(View v) {
@@ -268,9 +267,6 @@ public class Main extends Activity implements ParserEventListener,
 		case R.id.btn_day_7:
 			showTracksForDay(7);
 			break;
-		case R.id.btn_search:
-			onSearchRequested();
-			break;
 		case R.id.btn_favorites:
 			showFavorites();
 			break;
@@ -279,22 +275,6 @@ public class Main extends Activity implements ParserEventListener,
 					"Received a button click, but I don't know from where.");
 			break;
 		}
-	}
-
-	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-		switch (item.getItemId()) {
-		case UPDATE_ID:
-			showDialog(DIALOG_UPDATE);
-			return true;
-		case ABOUT_ID:
-			showDialog(DIALOG_ABOUT);
-			break;
-		case SETTINGS_ID:
-			showSettings();
-			break;
-		}
-		return super.onMenuItemSelected(featureId, item);
 	}
 
 	public void toast(String message) {
@@ -331,7 +311,6 @@ public class Main extends Activity implements ParserEventListener,
 				db.open();
 				try {
 					long count = db.getEventCount();
-					btnSearch.setEnabled(count > 0);
 					btnDay1.setEnabled(count > 0);
 					btnDay2.setEnabled(count > 0);
 					btnDay3.setEnabled(count > 0);
