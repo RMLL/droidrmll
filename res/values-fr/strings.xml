@@ -21,8 +21,8 @@
 	<string name="about_text2">Adapté depuis l\'application android du Fosdem par Emmanuel Bouthenot</string>
 	<string name="about_text3">L\'application android pour le Fosdem a été développée par Michaël Uyttersprot, Pieter Iserbyt and Christophe Vandeplas.</string>
 	<string name="favorites">Sélection</string>
-	<string name="favorites_event_removed">Événement supprimé de la sélection</string>
-	<string name="favorites_event_added">Événement ajouté à la sélection</string>
+	<string name="favorites_event_removed">Conférence supprimée de la sélection</string>
+	<string name="favorites_event_added">Conférence ajoutée à la sélection</string>
 	<string name="share">Partager…</string>
 	<string name="updater_title">Que voulez vous mettre à jour ?</string>
 	<string-array name="updater_dialog_choices">
@@ -38,15 +38,15 @@
 	<string name="day7">Vendredi</string>
 	<string name="notifications">Notifications</string>
 	<string name="enable_notifications">Activer les alertes</string>
-	<string name="enable_notifications_help">Si coché, vous serez alerté du départ imminent des événements que vous avez sélectionné</string>
+	<string name="enable_notifications_help">Si coché, vous serez alerté du départ imminent des conférences que vous avez sélectionnées</string>
 	<string name="vibrate">Vibration</string>
 	<string name="vibrate_help">Vibration lors des alertes</string>
 	<string name="flash_led">Éclairage DEL</string>
 	<string name="flash_led_help">Faire clignoter la DEL lors d\'une alerte</string>
 	<string name="notification_time">Moment de l\'alerte</string>
-	<string name="notification_time_help">Délai pour être averti du début d\'un événement à l\'avance</string>
-	<string name="favorites_upcoming">Événements à venir</string>
-	<string name="favorites_upcoming_help">Si coché, la sélection n\'affichera que les événements à venir</string>
+	<string name="notification_time_help">Délai (en minutes) pour être averti du début d\'une conférence à l\'avance</string>
+	<string name="favorites_upcoming">Conférences à venir</string>
+	<string name="favorites_upcoming_help">Si coché, la sélection n\'affichera que les conférences à venir</string>
 	<string name="test">test</string>
 	<string name="room_image">Image de la salle</string>
 </resources>

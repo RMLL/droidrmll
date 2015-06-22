@@ -21,8 +21,8 @@
 	<string name="about_text2">Adapted from the Fosdem schedule application by Emmanuel Bouthenot</string>
 	<string name="about_text3">The Fosdem schedule application was orginally programmed by Michaël Uyttersprot, Pieter Iserbyt and Christophe Vandeplas.</string>
 	<string name="favorites">Favorites</string>
-	<string name="favorites_event_removed">Event removed from favorites</string>
-	<string name="favorites_event_added">Event added to favorites</string>
+	<string name="favorites_event_removed">Talk removed from favorites</string>
+	<string name="favorites_event_added">Talk added to favorites</string>
 	<string name="share">Share…</string>
 	<string name="updater_title">What do you want to update?</string>
 	<string-array name="updater_dialog_choices">
@@ -38,16 +38,15 @@
 	<string name="day7">Friday</string>
 	<string name="notifications">Notifications</string>
 	<string name="enable_notifications">Enable notifications</string>
-	<string name="enable_notifications_help">If checked, this will notify you of upcoming events you favorited</string>
+	<string name="enable_notifications_help">If checked, this will notify you of upcoming talks you favorited</string>
 	<string name="vibrate">Vibrate</string>
 	<string name="vibrate_help">Vibrate on notifications</string>
 	<string name="flash_led">Flash led</string>
 	<string name="flash_led_help">Blink led on notification</string>
 	<string name="notification_time">Notification time</string>
-	<string name="notification_time_help">Delay before getting notified of an upcoming favorite event</string>
+	<string name="notification_time_help">Delay (in minutes) before getting notified of an upcoming favorite talk</string>
 	<string name="favorites_upcoming">Only show upcoming</string>
 	<string name="favorites_upcoming_help">If checked, this will ony show the upcoming favorites in the list</string>
 	<string name="test">test</string>
 	<string name="room_image">Room image</string>
-	
 </resources>
