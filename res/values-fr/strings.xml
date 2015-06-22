@@ -14,6 +14,7 @@
 	<string name="downloading_rooms">Téléchargement des plans des salles en cours…</string>
 	<string name="done_downloading_rooms">Le téléchargement des plans des salles est terminé.</string>
 	<string name="schedule_last_updated">Dernière mise à jour : %s</string>
+    <string name="event_room">Salle : %s</string>
 	<string name="trackslist_title">Thèmes du %s</string>
 	<string name="eventslist_title">%1$s - %2$s</string>
 	<string name="settings_description">Recherche RMLL</string>   

@@ -22,7 +22,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentRight="true"
-			android:paddingTop="10dip"
+			android:paddingTop="5dip"
 			android:paddingRight="10dip" />
 
 		<TextView
@@ -48,7 +48,7 @@
 	    android:background="@drawable/solid_black"
 	    android:orientation="vertical" >
 
-			<TextView
+		<TextView
 			    android:id="@+id/event_track"
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
@@ -58,6 +58,20 @@
 			    android:paddingTop="2dip"
 			    android:text="@string/test"
 			    android:textColor="@drawable/solid_white" />
+
+		<TextView
+		    android:id="@+id/event_room"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:paddingBottom="2dip"
+		    android:paddingLeft="3dip"
+		    android:paddingRight="3dip"
+		    android:paddingTop="2dip"
+		    android:text="@string/test"
+		    android:textColor="@drawable/solid_white"
+			android:layout_alignParentStart="false"
+			android:layout_alignParentEnd="false"
+			android:layout_alignParentRight="true" />
 
 	</RelativeLayout>
 
@@ -113,26 +127,6 @@
 	</RelativeLayout>
 
 	<RelativeLayout
-	    android:id="@+id/MetaRoomLayout"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:background="@drawable/solid_white"
-	    android:orientation="vertical" >
-
-		<TextView
-		    android:id="@+id/event_room"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:paddingBottom="2dip"
-		    android:paddingLeft="3dip"
-		    android:paddingRight="3dip"
-		    android:paddingTop="2dip"
-		    android:text="@string/test"
-		    android:textColor="@drawable/solid_black" />
-
-	</RelativeLayout>
-
-	<RelativeLayout
 		android:id="@+id/AbstractLayout"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -146,8 +140,8 @@
 			android:textColor="#000"
 			android:paddingLeft="10dip"
 			android:paddingRight="10dip"
-			android:paddingTop="0dip"
-			android:paddingBottom="0dip"
+			android:paddingTop="10dip"
+			android:paddingBottom="10dip"
 			android:text="@string/test" />
 
 	</RelativeLayout>
@@ -184,7 +178,8 @@
 			android:layout_height="fill_parent"
 			android:contentDescription="@string/room_image"
 			android:adjustViewBounds="true"
-			android:scaleType="fitCenter" />
+			android:scaleType="fitCenter"
+			android:padding="0dp" />
 
 	</RelativeLayout>
 

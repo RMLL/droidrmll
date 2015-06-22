@@ -14,6 +14,7 @@
 	<string name="downloading_rooms">Downloading rooms floor plans…</string>
 	<string name="done_downloading_rooms">Downloading rooms floor plans done</string>
 	<string name="schedule_last_updated">Last updated: %s</string>
+    <string name="event_room">Room: %s</string>
 	<string name="trackslist_title">Tracks for %s</string>
 	<string name="eventslist_title">%1$s - %2$s</string>
 	<string name="settings_description">RMLL/LSM search</string>
