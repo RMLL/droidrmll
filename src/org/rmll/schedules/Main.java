@@ -52,26 +52,17 @@ public class Main extends Activity implements ParserEventListener,
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;
 	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6, btnDay7;
-	protected Button btnFavorites;
 
 	@SuppressWarnings("unused")
 	private BroadcastReceiver favoritesChangedReceiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			//Log.v(getClass().getName(),"Action: "+intent.getIntExtra(FavoritesBroadcast.EXTRA_TYPE, -1));
 			if (intent.getIntExtra(FavoritesBroadcast.EXTRA_TYPE,-1)
 							!=FavoritesBroadcast.EXTRA_TYPE_INSERT && intent
 							.getIntExtra(FavoritesBroadcast.EXTRA_TYPE,-1)!=FavoritesBroadcast.EXTRA_TYPE_DELETE)
 				return;
-			long count = intent
-					.getLongExtra(FavoritesBroadcast.EXTRA_COUNT, -1);
-			Log
-					.v(getClass().getName(), "FavoritesBroadcast received! "
-							+ count);
-			if (count == 0 || count == -1)
-				btnFavorites.setEnabled(false);
-			else
-				btnFavorites.setEnabled(true);
+			long count = intent.getLongExtra(FavoritesBroadcast.EXTRA_COUNT, -1);
+			Log.v(getClass().getName(), "FavoritesBroadcast received! "  + count);
 		}
 	};
 
@@ -119,8 +110,6 @@ public class Main extends Activity implements ParserEventListener,
 		btnDay6.setOnClickListener(this);
 		btnDay7 = (Button) findViewById(R.id.btn_day_7);
 		btnDay7.setOnClickListener(this);
-		btnFavorites = (Button) findViewById(R.id.btn_favorites);
-		btnFavorites.setOnClickListener(this);
 
 		tvProgress = (TextView) findViewById(R.id.progress);
 		tvDbVer = (TextView) findViewById(R.id.db_ver);
@@ -138,7 +127,6 @@ public class Main extends Activity implements ParserEventListener,
 		long count = 0;
 		try {
 			dbAdapter.open();
-			btnFavorites.setEnabled(dbAdapter.getBookmarkCount() > 0);
 			count = dbAdapter.getEventCount();
 			btnDay1.setEnabled(count > 0);
 			btnDay2.setEnabled(count > 0);
@@ -173,6 +161,9 @@ public class Main extends Activity implements ParserEventListener,
 				break;
 			case R.id.action_refresh:
 				createUpdateDialog();
+				break;
+			case R.id.action_favorites:
+				showFavorites();
 				break;
 			case R.id.action_settings:
 				showSettings();
@@ -266,9 +257,6 @@ public class Main extends Activity implements ParserEventListener,
 			break;
 		case R.id.btn_day_7:
 			showTracksForDay(7);
-			break;
-		case R.id.btn_favorites:
-			showFavorites();
 			break;
 		default:
 			Log.e(LOG_TAG,
